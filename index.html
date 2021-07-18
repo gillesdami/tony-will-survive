@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Tony will survive !</title>
+        <script src="./countdown.js"></script>
+        <style>
+            body { background-image: url("./tony-face.jpg");     background-repeat: round;}
+            h3 { text-align: center; color: red; font-size: 80px; background-color: #FFFFFF55;}
+        </style>
+    </head>
+    <body>
+        <h3 id="pageTimer"></h3>
+    </body>
+    <script>
+        var timerId = countdown(
+            new Date("30 july 2021 18:00"),
+            function(ts) {
+                document.getElementById('pageTimer').innerHTML = ts.toHTML("strong");
+            },
+            countdown.HOURS|countdown.MINUTES|countdown.SECONDS
+        );
+        document.addEventListener("click", () => {
+            const audio = new Audio('./coffin.mp3');
+            audio.play();
+        })
+    </script>
+</html>
